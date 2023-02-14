@@ -1,0 +1,27 @@
+:root {
+  --nav-bg: hsl(209, 23%, 22%);
+  --nav-color: #f7f7f7;
+}
+
+[data-theme="light"] {
+  --nav-bg: #f7f7f7;
+  --nav-color: hsl(209, 23%, 22%);
+}
+
+.Navigation {
+  width: 100% !important;
+  background-color: var(--nav-bg);
+  color: var(--nav-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.1rem 3.2rem;
+  box-shadow: rgba(35, 35, 46, 0.124) 0px 7px 29px 0px;
+
+  .logo {
+    font-weight: 500;
+  }
+
+  .mode {
+    cursor: pointer;
+  }
+}

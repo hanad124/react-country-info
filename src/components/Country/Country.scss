@@ -1,0 +1,183 @@
+
+:root {
+  --country-bg: #2b3945;
+  --font-color: #fff;
+  --spn-clr: #999999;
+}
+
+[data-theme="light"] {
+  --country-bg: #f7f7f7;
+  --font-color: #2b3945;
+  --spn-clr: #999999;
+}
+
+.singleCountry {
+  padding: 3.5rem;
+}
+
+.countryDetail {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.country_flag {
+  img {
+    width: 27rem;
+    border-radius: 0.3rem;
+    max-width: 400px;
+  }
+}
+
+.info_cols {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1rem;
+
+  p {
+    line-height: 2;
+
+    span {
+      font-weight: 500;
+      color: var(--spn-clr);
+      margin-left: 0.3rem;
+    }
+  }
+}
+.back {
+  margin-bottom: 3rem;
+  background-color: var(--country-bg);
+  box-shadow: rgba(35, 35, 46, 0.17) 0px 7px 29px 0px;
+  border: none;
+  padding: 0.5rem 2rem;
+  display: flex;
+  gap: 0.6rem;
+  color: var(--font-color);
+  align-items: center;
+  border-radius: 0.3rem;
+  cursor: pointer;
+
+  p {
+    font-size: 1rem;
+  }
+
+  &:focus,
+  &:hover {
+    outline: 0.2rem solid hsla(208, 23%, 34%, 0.381);
+  }
+
+  &-icon {
+    font-size: 1.3rem;
+  }
+}
+
+.country_info {
+  color: var(--font-color);
+  margin-bottom: -4rem;
+}
+
+.borders {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.2rem;
+  row-gap: 1rem;
+
+  span {
+    background-color: var(--country-bg);
+    box-shadow: rgba(35, 35, 46, 0.219) 0px 7px 29px 0px;
+    margin-left: 0.7rem;
+    padding: 0.3rem 1.5rem;
+    border-radius: 0.2rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: rgba(49, 49, 70, 0.685) 0px 7px 29px 0px;
+    }
+  }
+}
+
+// ========= media query =======
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 512px) {
+  .country_flag {
+    img {
+      //   max-width: 200px;
+      width: 100%;
+    }
+  }
+
+  .countryDetail {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .info_cols {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 700px) {
+  .country_flag {
+    img {
+      width: 100%;
+    }
+  }
+
+  .countryDetail {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .info_cols {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+  .country_info p {
+    font-size: 1.1rem !important;
+  }
+  .borders {
+    span {
+      padding: 0.3rem 1.5rem !important;
+      font-size: 0.8rem !important;
+    }
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 788px) {
+  .country_flag {
+    img {
+      width: 16rem;
+    }
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .country_info p {
+    font-size: 0.7rem;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .country_flag {
+    img {
+      width: 18rem;
+    }
+  }
+  .countryDetail {
+    gap: 2rem;
+  }
+
+  .borders {
+    span {
+      font-size: 0.5rem;
+      padding: 0.2rem 1rem;
+    }
+  }
+}

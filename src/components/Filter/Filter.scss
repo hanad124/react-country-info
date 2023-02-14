@@ -1,0 +1,78 @@
+:root {
+  --filter-bg: hsl(209, 23%, 22%);
+  --font-color: #fff;
+  --spn-clr: #999999;
+  --selection-hover-bg: hsla(209, 19%, 40%, 0.338);
+}
+
+[data-theme="light"] {
+  --filter-bg: #f7f7f7;
+  --font-color: hsl(209, 23%, 22%);
+  --spn-clr: #999999;
+  --selection-hover-bg: rgba(0, 0, 0, 0.16);
+}
+
+.filter-container {
+  position: relative;
+  z-index: 10;
+
+  .filter-header {
+    background-color: var(--filter-bg);
+    box-shadow: rgba(35, 35, 46, 0.276) 0px 7px 29px 0px;
+    width: 11rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem;
+    border-radius: 0.3rem;
+    color: var(--font-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .filter-icon {
+    font-size: 1.3rem;
+  }
+
+  .filter-selection {
+    display: none;
+    width: 11rem;
+    background-color: var(--filter-bg);
+    border-radius: 0.3rem;
+    margin-top: 0.3rem;
+    color: var(--font-color);
+    position: absolute;
+
+    .region {
+      font-size: 0.9rem;
+      cursor: pointer;
+      padding: 0.3rem;
+
+      &:hover {
+        background-color: var(--selection-hover-bg);
+      }
+    }
+
+    a {
+      color: var(--font-color);
+    }
+  }
+
+  .show-selection {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .filter-header {
+    position: relative;
+    width: 100vw;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (max-width: 620px) {
+  .filter-header {
+    width: 100%;
+  }
+}

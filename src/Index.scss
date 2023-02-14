@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #a6a6a6;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #6c6b6b;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: hsla(208, 23%, 22%, 0.822);
+}
+
+/*========= COLORS ==========*/
+:root {
+  --body-bg: #202c37; /* Dark Mode Elements */
+}
+
+[data-theme="light"] {
+  --body-bg: #fff;
+}
+
+body {
+  background-color: var(--body-bg);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.sub_header {
+  padding: 2rem 3.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardsContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 3.2rem;
+  // margin: 0 auto;
+  gap: 2rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 512px) {
+  .sub_header {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .cardsContainer {
+    padding-left: 0;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (max-width: 640px) {
+  .sub_header {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .cardsContainer {
+    padding-left: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  .cardsContainer {
+    padding-left: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 788px) {
+  .cardsContainer {
+    padding-left: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 992px) {
+  .cardsContainer {
+    padding-left: 0;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
