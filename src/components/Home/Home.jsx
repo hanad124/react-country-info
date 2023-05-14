@@ -44,7 +44,8 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <div className="sub_header">
+      <div className="sub_header" onClick={() => {
+      }}>
         <Search changeHandler={onSearchChange} />
         <Filter />
       </div>

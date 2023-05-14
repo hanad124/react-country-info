@@ -31,6 +31,7 @@ const regionNames = [
   },
 ];
 
+
 const Filter = () => {
   const { region, setRegion } = useContext(RegionContext);
   const [active, setActive] = useState(false);
@@ -77,7 +78,8 @@ const Filter = () => {
             <div
               className="region"
               key={li.id}
-              onClick={() => {
+              onClick={(e) => {
+                console.log(e.target);
                 setSelect(li.region);
                 localStorage.setItem("Region", JSON.stringify(region));
               }}
