@@ -8,6 +8,7 @@ import "../Container/Container.scss";
 
 const Home = () => {
   const { region, setRegion } = useContext(RegionContext);
+  const [load, setLoad] = useState(false);
   const [countries, setCountries] = useState([]);
   const [filteredCountry, setFilteredCountry] = useState(countries);
   const [searchField, setSearchField] = useState("");
@@ -18,9 +19,15 @@ const Home = () => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
       .then((Data) => {
+        console.log(Data);
+        if (Data) {
+          setLoad(true);
+        }
         setCountries(Data);
       });
   }, []);
+
+  console.log(load);
 
   useEffect(() => {
     const newFilteredCountry = countries.filter((country) => {
@@ -44,8 +51,7 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <div className="sub_header" onClick={() => {
-      }}>
+      <div className="sub_header" onClick={() => {}}>
         <Search changeHandler={onSearchChange} />
         <Filter />
       </div>
@@ -53,23 +59,38 @@ const Home = () => {
         {filteredCountry.map((count) => {
           return (
             <div
-              className="card"
+              className={`card ${!load ? skeleton : ""}`}
               onClick={() => {
                 console.log(count);
                 localStorage.setItem("items", JSON.stringify(count));
-              }}
-            >
+              }}>
               <Link to="/country">
-                <img src={count.flags.png} alt="" className="flag" />
-                <div className="country-desc">
-                  <div className="country_name">{count.name.common}</div>
-                  <div className="population">
+                <img
+                  src={count.flags.png}
+                  alt=""
+                  className={`flag ${!load ? skeleton : ""}`}
+                />
+                <div
+                  className={`country-desc {
+ ${!load ? skeleton : ""}`}>
+                  <div
+                    className={`country_name {
+ ${!load ? skeleton : ""}`}>
+                    {count.name.common}
+                  </div>
+                  <div
+                    className={`population {
+ ${!load ? skeleton : ""}`}>
                     Population: <span>{f.format(count.population)}</span>
                   </div>
-                  <div className="region">
+                  <div
+                    className={`region {
+ ${!load ? skeleton : ""}`}>
                     Region: <span>{count.region}</span>
                   </div>
-                  <div className="capital">
+                  <div
+                    className={`capital {
+ ${!load ? skeleton : ""}`}>
                     Capital: <span>{count.capital}</span>
                   </div>
                 </div>

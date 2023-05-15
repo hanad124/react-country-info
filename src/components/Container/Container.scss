@@ -53,6 +53,33 @@
   }
 }
 
+// ...... SKELETON ........
+.skeleton {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(90deg, #eee, #c4c4c4, #eee) ;
+    background-size: 200%;
+    animation: skeleton 2s infinite reverse;
+  }
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 515px) {
   .card {
